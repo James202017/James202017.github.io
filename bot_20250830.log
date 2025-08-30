@@ -1,0 +1,1523 @@
+2025-08-30 13:06:01,285 - __main__ - INFO - Бот запущен
+2025-08-30 13:06:22,399 - aiogram - WARNING - Goodbye!
+2025-08-30 13:06:22,399 - __main__ - ERROR - Ошибка в работе бота: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 13:26:08,196 - __main__ - INFO - Бот запущен
+2025-08-30 13:26:08,809 - aiogram - INFO - Bot: Инвестиции! Только рост! [@tda_anketa_invBot]
+2025-08-30 13:26:09,009 - aiogram - WARNING - Updates were skipped successfully.
+2025-08-30 13:26:09,010 - aiogram.dispatcher.dispatcher - INFO - Start polling.
+2025-08-30 13:29:30,014 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:30:55,217 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:44:48,652 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:46:34,057 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:50:40,837 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:56:08,510 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:56:53,193 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:58:18,347 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:59:23,647 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 13:59:49,699 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:00:15,808 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:01:20,973 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:02:46,132 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:03:30,863 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:03:56,899 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:04:22,953 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:05:27,955 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:06:32,996 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:06:59,049 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:08:04,105 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:11:10,435 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:11:36,544 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:15:02,850 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:18:08,945 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:21:35,416 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:29:24,688 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:36:33,378 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:36:59,486 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 992, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1160, in create_connection
+    raise exceptions[0]
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1135, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+        exceptions, addrinfo, laddr_infos)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 1038, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\proactor_events.py", line 726, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 804, in _poll
+    value = callback(transferred, key, ov)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\asyncio\windows_events.py", line 600, in finish_connect
+    ov.getresult()
+    ~~~~~~~~~~~~^^
+OSError: [WinError 121] Превышен таймаут семафора
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 578, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 544, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 911, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1235, in _create_direct_connection
+    raise last_exc
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1204, in _create_direct_connection
+    transp, proto = await self._wrap_create_connection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<12 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1000, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+2025-08-30 14:44:35,861 - __main__ - INFO - Бот запущен
+2025-08-30 14:44:36,338 - aiogram - INFO - Bot: Инвестиции! Только рост! [@tda_anketa_invBot]
+2025-08-30 14:44:36,534 - aiogram - WARNING - Updates were skipped successfully.
+2025-08-30 14:44:36,535 - aiogram.dispatcher.dispatcher - INFO - Start polling.
+2025-08-30 14:50:59,596 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:51:44,253 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+2025-08-30 14:54:10,258 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2025-08-30 14:54:54,912 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+2025-08-30 15:02:05,404 - __main__ - INFO - Бот запущен
+2025-08-30 15:02:05,890 - aiogram - INFO - Bot: Инвестиции! Только рост! [@tda_anketa_invBot]
+2025-08-30 15:02:06,085 - aiogram - WARNING - Updates were skipped successfully.
+2025-08-30 15:02:06,085 - aiogram.dispatcher.dispatcher - INFO - Start polling.
+2025-08-30 15:06:07,602 - aiogram.dispatcher.dispatcher - ERROR - Cause exception while getting updates.
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1194, in __aenter__
+    self._resp = await self._coro
+                 ^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 605, in _request
+    await resp.start(conn)
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client_reqrep.py", line 966, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\streams.py", line 622, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proxy=self.proxy, proxy_auth=self.proxy_auth, timeout=self.timeout, **kwargs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Kane3\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\bot\api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected

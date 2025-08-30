@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+# Установка зависимостей
+RUN apt-get update && apt-get install -y gcc libffi-dev libssl-dev \
+    && pip install --no-cache-dir aiogram python-dotenv
+
+# Копирование проекта
+WORKDIR /app
+COPY . /app
+
+# Старт по умолчанию (в docker-compose запускать конкретные скрипты)
+CMD ["python", "bots/BOT_P.py"]
