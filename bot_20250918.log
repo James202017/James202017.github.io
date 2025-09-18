@@ -1,0 +1,73 @@
+2025-09-18 13:21:02,345 - __main__ - INFO - Бот запущен
+2025-09-18 13:21:02,345 - aiogram.dispatcher - INFO - Start polling
+2025-09-18 13:21:02,883 - aiogram.dispatcher - INFO - Run polling for bot @tda_anketa_invBot id=8136187954 - 'Инвестиции'
+2025-09-18 13:21:02,987 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:21:02,988 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:21:02,988 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:21:02,990 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:21:03,699 - __main__ - ERROR - Ошибка в команде start: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:21:03,722 - __main__ - ERROR - Ошибка в команде start: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:21:03,746 - __main__ - ERROR - Ошибка в команде start: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:21:03,769 - __main__ - ERROR - Ошибка в команде start: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:21:03,816 - aiogram.event - INFO - Update id=674663250 is handled. Duration 829 ms by bot id=8136187954
+2025-09-18 13:21:03,836 - aiogram.event - INFO - Update id=674663252 is handled. Duration 847 ms by bot id=8136187954
+2025-09-18 13:21:03,862 - aiogram.event - INFO - Update id=674663251 is handled. Duration 874 ms by bot id=8136187954
+2025-09-18 13:21:03,884 - aiogram.event - INFO - Update id=674663253 is handled. Duration 894 ms by bot id=8136187954
+2025-09-18 13:23:09,859 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:23:10,537 - __main__ - ERROR - Ошибка в команде start: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:23:10,680 - aiogram.event - INFO - Update id=674663254 is handled. Duration 820 ms by bot id=8136187954
+2025-09-18 13:23:39,481 - __main__ - ERROR - Ошибка в обработке направления: 1 validation error for ReplyKeyboardMarkup
+keyboard
+  Field required [type=missing, input_value={'resize_keyboard': True,...e_time_keyboard': False}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/missing
+2025-09-18 13:23:39,959 - aiogram.event - INFO - Update id=674663255 is handled. Duration 479 ms by bot id=8136187954
+2025-09-18 13:24:08,686 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 13:24:08,686 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 13:24:20,154 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 13:27:01,875 - __main__ - INFO - Бот запущен
+2025-09-18 13:27:01,876 - aiogram.dispatcher - INFO - Start polling
+2025-09-18 13:27:02,441 - aiogram.dispatcher - INFO - Run polling for bot @tda_anketa_invBot id=8136187954 - 'Инвестиции'
+2025-09-18 13:29:32,824 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 13:29:32,824 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 13:29:44,438 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 13:37:59,855 - __main__ - INFO - Пользователь 464251135 запустил бота с параметром: 
+2025-09-18 13:38:00,677 - aiogram.event - INFO - Update id=674663256 is handled. Duration 822 ms by bot id=8136187954
+2025-09-18 13:42:14,722 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-09-18 13:42:14,744 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 13:42:26,108 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:02:56,943 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 14:02:56,945 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:03:08,420 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:03:37,628 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+2025-09-18 14:03:37,628 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:03:49,086 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:04:58,761 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 14:04:58,761 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:05:10,219 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:08:33,875 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+2025-09-18 14:08:33,894 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:08:45,168 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:26:04,683 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 64] Указанное сетевое имя более недоступно
+2025-09-18 14:26:04,685 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:26:16,133 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:27:05,513 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 14:27:05,514 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:27:17,029 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)
+2025-09-18 14:30:27,890 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+2025-09-18 14:30:27,890 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8136187954)
+2025-09-18 14:30:39,366 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8136187954)

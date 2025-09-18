@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг Telegram Ботов</title>
+  <style>
+    :root { --bg1:#070b14; --bg2:#0b1324; --panel:rgba(255,255,255,.06); --stroke:rgba(255,255,255,.14);
+            --text:#e6edf7; --muted:#9fb3d9; --accent:#5eead4; --violet:#8b5cf6; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(900px 600px at 20% 10%, #0f172a, var(--bg1)) fixed,
+                                      radial-gradient(1000px 700px at 80% 90%, #111827, var(--bg2)) fixed;
+              color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;scroll-behavior:smooth;overflow-x:hidden}
+    a{color:var(--accent);text-decoration:none}
+    .container{width:min(1100px,92vw);margin:0 auto}
+    nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15, 23, 42, 0.2);backdrop-filter:blur(15px);border-bottom:1px solid rgba(148, 163, 184, 0.1)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px}
+    .brand{font-weight:900;letter-spacing:.08em;-webkit-text-stroke:1px #9fb3d9;color:transparent;font-size:1.4em}
+    .menu{display:flex;gap:20px;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+    .menu a{padding:8px 12px;border-radius:6px;font-size:14px;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);background:rgba(255, 255, 255, 0.05);backdrop-filter:blur(10px);border:1px solid rgba(148, 163, 184, 0.2);transform-style:preserve-3d;perspective:1000px;position:relative;overflow:hidden}
+    .menu a::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(94,234,212,0.1), rgba(139,92,246,0.1));opacity:0;transition:opacity 0.3s ease;z-index:1}
+    .menu a:hover::before{opacity:1}
+    .menu a:hover{background:rgba(94, 234, 212, 0.1);border-color:rgba(94, 234, 212, 0.3);transform:translateY(-4px) rotateX(3deg) rotateY(3deg) scale(1.02);box-shadow:0 12px 30px rgba(94,234,212,0.2), 0 6px 15px rgba(139,92,246,0.2)}
+    .menu a.active{border-color:var(--stroke);background:linear-gradient(135deg, rgba(94,234,212,.16), rgba(139,92,246,.16))}
+    .btn{padding:8px 12px;border-radius:10px;background:linear-gradient(135deg, rgba(94,234,212,.2), rgba(139,92,246,.2));
+         border:1px solid var(--stroke);color:var(--text);transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);display:inline-flex;gap:6px;align-items:center;font-size:14px;transform-style:preserve-3d;perspective:1000px;position:relative;overflow:hidden}
+    .btn::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(94,234,212,0.1), rgba(139,92,246,0.1));opacity:0;transition:opacity 0.3s ease;z-index:1}
+    .btn:hover::before{opacity:1}
+    .btn:hover{transform:translateY(-6px) rotateX(4deg) rotateY(4deg) scale(1.05);box-shadow:0 15px 40px rgba(94,234,212,0.3), 0 8px 20px rgba(139,92,246,0.3);background:linear-gradient(135deg, #5EEAC4, #8B5CF6)}
+    
+    /* Стили для графиков и форм */
+    .benefits-chart { display: flex; flex-direction: column; gap: 12px; }
+    .chart-item { display: flex; align-items: center; gap: 12px; }
+    .chart-bar { height: 8px; border-radius: 4px; transition: width 0.8s ease; }
+    .chart-item span { font-size: 14px; color: var(--text); min-width: 200px; }
+    
+    .stat-circle { transition: transform 0.3s ease; }
+    .stat-circle:hover { transform: scale(1.05); }
+    
+    .process-step { transition: transform 0.3s ease; }
+    .process-step:hover { transform: translateY(-5px); }
+    
+    /* Анимация появления графиков */
+    .reveal.show .chart-bar { animation: fillBar 1.2s ease-out; }
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--final-width, 100%); }
+    }
+    
+    /* Стили для форм */
+    form input, form select, form textarea {
+      color: var(--text);
+      background: var(--panel);
+    }
+    form input:focus, form select:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(94,234,212,0.2);
+    }
+    
+    form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(94,234,212,0.4);
+    }
+    
+    header{position:relative;height:92vh;display:grid;place-items:center;overflow:hidden}
+    #neuro{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;opacity:1.0;pointer-events:none}
+    
+    body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.3) 15%, rgba(15, 23, 42, 0.1) 30%, rgba(15, 23, 42, 0.1) 70%, rgba(15, 23, 42, 0.3) 85%, rgba(15, 23, 42, 0.95) 100%);z-index:2;pointer-events:none}
+    .hero{position:relative;z-index:2;text-align:center}
+    .title{font-size:clamp(42px,10vw,150px);letter-spacing:.08em;font-weight:900;color:transparent;-webkit-text-stroke:2px #9fb3d9;
+           text-shadow:0 0 60px rgba(94,234,212,.14), 0 0 30px rgba(139,92,246,.12);animation:float 6s ease-in-out infinite;opacity:0}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+    .subtitle{color:var(--muted);max-width:820px;margin:12px auto 0}
+    .cta{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    section{padding:72px 0;position:relative}
+    h2{margin:0 0 14px;font-size:clamp(22px,4vw,36px)}
+    p{color:var(--muted);margin:0 0 10px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--panel);border:1px solid var(--stroke);border-radius:18px;padding:22px 20px;backdrop-filter: blur(8px);transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);transform-style:preserve-3d;perspective:1000px;position:relative;overflow:hidden}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(94,234,212,0.08), rgba(139,92,246,0.08));opacity:0;transition:opacity 0.3s ease;z-index:1}
+    .card:hover::before{opacity:1}
+    .card:hover{transform:translateY(-8px) rotateX(4deg) rotateY(4deg) scale(1.02);box-shadow:0 20px 60px rgba(94,234,212,0.2), 0 10px 30px rgba(139,92,246,0.2);border-color:var(--accent)}
+    
+    /* 3D анимированные ссылки для услуг */
+    .service-card{background:var(--panel);border:1px solid var(--stroke);border-radius:12px;padding:24px;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);transform-style:preserve-3d;perspective:1000px;cursor:pointer;position:relative;overflow:hidden}
+    
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(94,234,212,0.1), rgba(139,92,246,0.1));opacity:0;transition:opacity 0.3s ease;z-index:1}
+    
+    .service-card:hover::before{opacity:1}
+    
+    .service-card:hover{transform:translateY(-8px) rotateX(5deg) rotateY(5deg) scale(1.02);box-shadow:0 20px 60px rgba(94,234,212,0.2), 0 10px 30px rgba(139,92,246,0.2);border-color:var(--accent)}
+    
+    .service-card .card-content{position:relative;z-index:2;transition:transform 0.3s ease}
+    
+    .service-card:hover .card-content{transform:translateZ(20px)}
+    
+    .service-card .btn{transform:translateZ(10px);transition:all 0.3s ease}
+    
+    .service-card:hover .btn{transform:translateZ(30px) scale(1.05);background:linear-gradient(135deg, #5EEAC4, #8B5CF6);box-shadow:0 8px 25px rgba(94,234,212,0.3)}
+    .qr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+    .qr-card{text-align:center}
+    .qr-card{transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);transform-style:preserve-3d;perspective:1000px;position:relative}
+    .qr-card:hover{transform:translateY(-6px) rotateX(4deg) rotateY(4deg) scale(1.05)}
+    .qr-card img{width:140px;height:140px;border-radius:12px;border:1px solid var(--stroke);background:#0b1020;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+    .qr-card:hover img{box-shadow:0 12px 30px rgba(94,234,212,0.2), 0 6px 15px rgba(139,92,246,0.2);border-color:var(--accent)}
+    .deal{display:flex;flex-direction:column;gap:10px}
+    .deal .meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+    .deal a.btn{align-self:flex-start}
+    .testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .testi .item{background:var(--panel);border:1px solid var(--stroke);border-radius:16px;padding:16px;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);transform-style:preserve-3d;perspective:1000px;position:relative;overflow:hidden}
+    .testi .item::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg, rgba(94,234,212,0.08), rgba(139,92,246,0.08));opacity:0;transition:opacity 0.3s ease;z-index:1}
+    .testi .item:hover::before{opacity:1}
+    .testi .item:hover{transform:translateY(-6px) rotateX(3deg) rotateY(3deg) scale(1.02);box-shadow:0 15px 40px rgba(94,234,212,0.2), 0 8px 20px rgba(139,92,246,0.2);border-color:var(--accent)}
+    .testi .item .who{font-weight:700}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+    footer{padding:40px 0;text-align:center;color:var(--muted)}
+    .tip{font-size:14px;color:var(--muted);margin-top:8px}
+    @media (max-width:640px){ .menu{gap:8px} .title{-webkit-text-stroke:1.5px #9fb3d9} }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand">TDA‑AGENT</div>
+      <div class="menu" id="menu">
+        <a href="#hero">Главная</a>
+        <a href="#services">Услуги</a>
+        <a href="#achievements">Достижения</a>
+        <a href="#realtors">Риелторам</a>
+        <a href="#buyers">Покупателям</a>
+        <a href="#deals">Предложения</a>
+        <a href="#testimonials">Отзывы</a>
+        <a href="#qr">Контакты</a>
+        <a href="#about">О компании</a>
+      </div>
+      <a class="btn" href="https://t.me/Agent_TDA" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+  </nav>
+
+  <header id="hero">
+    <canvas id="neuro"></canvas>
+    <div class="hero container">
+      <div id="title" class="title">TDA‑AGENT</div>
+      <p class="subtitle">Профессиональная экосистема для работы с недвижимостью. Инновационные технологии, экспертная аналитика и персональное сопровождение каждой сделки. Новостройки без комиссии, инвестиционные проекты, ипотечное кредитование — всё для вашего успеха в сфере недвижимости.</p>
+      <div class="cta">
+        <a class="btn" href="#services">🏠 Наши услуги</a>
+        <a class="btn" href="#achievements">📊 Наши достижения</a>
+        <a class="btn" href="https://t.me/Agent_TDA" target="_blank" rel="noopener">💬 Получить консультацию</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services">
+      <div class="container">
+        <h2>Услуги</h2>
+        <p class="reveal">Выберите направление — бот задаст 3–6 уточняющих вопросов и передаст заявку в работу.</p>
+        <div class="grid" id="servicesGrid" aria-live="polite"></div>
+        <div class="tip">Ссылки на ботов уже подключены по вашей визитке.</div>
+      </div>
+    </section>
+
+    <section id="achievements" style="background:linear-gradient(135deg, rgba(94,234,212,.03), rgba(139,92,246,.03))">
+      <div class="container">
+        <h2>Наши достижения</h2>
+        <p class="reveal">Цифры, которые говорят о нашем профессионализме и доверии клиентов</p>
+        <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px">
+          <div class="card reveal" style="text-align:center">
+            <div style="font-size:2.5em;font-weight:900;color:var(--accent);margin-bottom:8px">500+</div>
+            <h4 style="margin:0 0 8px">Успешных сделок</h4>
+            <p style="margin:0;font-size:14px">За последние 2 года</p>
+          </div>
+          <div class="card reveal" style="text-align:center">
+            <div style="font-size:2.5em;font-weight:900;color:var(--accent);margin-bottom:8px">15 млрд ₽</div>
+            <h4 style="margin:0 0 8px">Объем сделок</h4>
+            <p style="margin:0;font-size:14px">Общая стоимость объектов</p>
+          </div>
+          <div class="card reveal" style="text-align:center">
+            <div style="font-size:2.5em;font-weight:900;color:var(--accent);margin-bottom:8px">98%</div>
+            <h4 style="margin:0 0 8px">Довольных клиентов</h4>
+            <p style="margin:0;font-size:14px">Рекомендуют нас друзьям</p>
+          </div>
+          <div class="card reveal" style="text-align:center">
+            <div style="font-size:2.5em;font-weight:900;color:var(--accent);margin-bottom:8px">24/7</div>
+            <h4 style="margin:0 0 8px">Поддержка</h4>
+            <p style="margin:0;font-size:14px">Консультации в любое время</p>
+          </div>
+        </div>
+        <div class="card reveal" style="margin-top:32px;text-align:center">
+          <h3 style="color:var(--accent);margin:0 0 16px">🏆 Сертификации и партнерства</h3>
+          <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;align-items:center">
+            <div style="padding:12px 20px;background:rgba(94,234,212,.1);border-radius:8px;border:1px solid var(--stroke)">
+              <strong>Росреестр</strong><br><small>Аккредитованный партнер</small>
+            </div>
+            <div style="padding:12px 20px;background:rgba(139,92,246,.1);border-radius:8px;border:1px solid var(--stroke)">
+              <strong>Банки-партнеры</strong><br><small>15+ кредитных организаций</small>
+            </div>
+            <div style="padding:12px 20px;background:rgba(94,234,212,.1);border-radius:8px;border:1px solid var(--stroke)">
+              <strong>Страховые компании</strong><br><small>Топ-10 страховщиков РФ</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Новые разделы для риелторов и покупателей -->
+    <section id="realtors">
+      <div class="container">
+        <h2>Для риелторов и специалистов по недвижимости</h2>
+        <p class="reveal">Профессиональные инструменты для увеличения продаж и автоматизации процессов</p>
+        
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0;">
+          <!-- Преимущества для риелторов -->
+          <div class="card reveal">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">📈 Ваши преимущества</h3>
+            <div class="benefits-chart" style="margin-bottom: 20px;">
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 85%; background: linear-gradient(90deg, #5EEAC4, #8B5CF6);"></div>
+                <span>Увеличение продаж на 85%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 70%; background: linear-gradient(90deg, #8B5CF6, #5EEAC4);"></div>
+                <span>Экономия времени 70%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 90%; background: linear-gradient(90deg, #5EEAC4, #8B5CF6);"></div>
+                <span>Качество лидов 90%</span>
+              </div>
+            </div>
+            <ul style="list-style: none; padding: 0;">
+              <li>🎯 Готовые горячие лиды</li>
+              <li>🤖 Автоматизация рутинных задач</li>
+              <li>📊 Аналитика и отчетность</li>
+              <li>💰 Увеличение среднего чека</li>
+              <li>🏆 Профессиональная репутация</li>
+            </ul>
+          </div>
+          
+          <!-- Форма для риелторов -->
+          <div class="card reveal">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">🚀 Начать работу</h3>
+            <form id="realtorForm" style="display: flex; flex-direction: column; gap: 16px;">
+              <input type="text" id="realtorName" placeholder="Ваше ФИО *" required style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <input type="tel" id="realtorPhone" placeholder="Номер телефона *" required style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <input type="email" id="realtorEmail" placeholder="Email" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <select id="realtorExperience" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+                <option value="">Опыт работы</option>
+                <option value="0-1">Менее 1 года</option>
+                <option value="1-3">1-3 года</option>
+                <option value="3-5">3-5 лет</option>
+                <option value="5+">Более 5 лет</option>
+              </select>
+              <textarea id="realtorComment" placeholder="Дополнительная информация" rows="3" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary); resize: vertical;"></textarea>
+              <button type="submit" class="btn" style="background: linear-gradient(135deg, #5EEAC4, #8B5CF6); border: none; color: white; font-weight: bold;">Подключиться к TDA-AGENT</button>
+            </form>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 12px;">* После отправки формы вы получите приглашение в Telegram-бот для подтверждения</p>
+          </div>
+        </div>
+        
+        <!-- Статистика успеха -->
+        <div class="card reveal" style="text-align: center; margin-top: 32px;">
+          <h3 style="color: var(--accent); margin-bottom: 24px;">📊 Результаты наших партнеров</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+            <div class="stat-item">
+              <div class="stat-circle" style="width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(#5EEAC4 0deg 306deg, #e5e7eb 306deg 360deg); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">85%</div>
+              </div>
+              <h4>Рост продаж</h4>
+              <p style="font-size: 14px; color: var(--muted);">Средний показатель за 6 месяцев</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-circle" style="width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(#8B5CF6 0deg 252deg, #e5e7eb 252deg 360deg); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">70%</div>
+              </div>
+              <h4>Экономия времени</h4>
+              <p style="font-size: 14px; color: var(--muted);">На рутинных операциях</p>
+            </div>
+            <div class="stat-item">
+              <div class="stat-circle" style="width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(#5EEAC4 0deg 324deg, #e5e7eb 324deg 360deg); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold;">90%</div>
+              </div>
+              <h4>Качество лидов</h4>
+              <p style="font-size: 14px; color: var(--muted);">Готовые к покупке клиенты</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="buyers">
+      <div class="container">
+        <h2>Для покупателей недвижимости</h2>
+        <p class="reveal">Найдите идеальную недвижимость с максимальной выгодой и гарантией безопасности</p>
+        
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 32px; margin: 32px 0;">
+          <!-- Преимущества для покупателей -->
+          <div class="card reveal">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">💎 Ваши выгоды</h3>
+            <div class="benefits-chart" style="margin-bottom: 20px;">
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 95%; background: linear-gradient(90deg, #8B5CF6, #5EEAC4);"></div>
+                <span>Экономия до 15% от стоимости</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 80%; background: linear-gradient(90deg, #5EEAC4, #8B5CF6);"></div>
+                <span>Ускорение сделки на 80%</span>
+              </div>
+              <div class="chart-item">
+                <div class="chart-bar" style="width: 100%; background: linear-gradient(90deg, #8B5CF6, #5EEAC4);"></div>
+                <span>100% юридическая чистота</span>
+              </div>
+            </div>
+            <ul style="list-style: none; padding: 0;">
+              <li>💰 Скидки и эксклюзивные предложения</li>
+              <li>🔍 Проверка юридической чистоты</li>
+              <li>📋 Помощь с документами</li>
+              <li>🏦 Лучшие условия ипотеки</li>
+              <li>🛡️ Страхование сделки</li>
+            </ul>
+          </div>
+          
+          <!-- Форма для покупателей -->
+          <div class="card reveal">
+            <h3 style="color: var(--accent); margin-bottom: 20px;">🏠 Найти недвижимость</h3>
+            <form id="buyerForm" style="display: flex; flex-direction: column; gap: 16px;">
+              <input type="text" id="buyerName" placeholder="Ваше ФИО *" required style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <input type="tel" id="buyerPhone" placeholder="Номер телефона *" required style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <input type="email" id="buyerEmail" placeholder="Email" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              <select id="propertyType" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+                <option value="">Тип недвижимости</option>
+                <option value="apartment">Квартира</option>
+                <option value="house">Дом</option>
+                <option value="commercial">Коммерческая</option>
+                <option value="land">Участок</option>
+              </select>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <input type="number" id="budgetFrom" placeholder="Бюджет от" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+                <input type="number" id="budgetTo" placeholder="Бюджет до" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary);">
+              </div>
+              <textarea id="buyerComment" placeholder="Дополнительные пожелания" rows="3" style="padding: 12px; border: 1px solid var(--stroke); border-radius: 8px; background: var(--bg-secondary); resize: vertical;"></textarea>
+              <button type="submit" class="btn" style="background: linear-gradient(135deg, #8B5CF6, #5EEAC4); border: none; color: white; font-weight: bold;">Начать поиск недвижимости</button>
+            </form>
+            <p style="font-size: 12px; color: var(--muted); margin-top: 12px;">* После отправки формы вы получите приглашение в Telegram-бот для подтверждения</p>
+          </div>
+        </div>
+        
+        <!-- Процесс работы -->
+        <div class="card reveal" style="margin-top: 32px;">
+          <h3 style="color: var(--accent); text-align: center; margin-bottom: 32px;">🎯 Как мы работаем</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+            <div class="process-step" style="text-align: center; padding: 20px;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #5EEAC4, #8B5CF6); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;">1</div>
+              <h4>Анализ потребностей</h4>
+              <p style="font-size: 14px; color: var(--muted);">Изучаем ваши требования и бюджет</p>
+            </div>
+            <div class="process-step" style="text-align: center; padding: 20px;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #8B5CF6, #5EEAC4); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;">2</div>
+              <h4>Подбор вариантов</h4>
+              <p style="font-size: 14px; color: var(--muted);">Находим лучшие предложения на рынке</p>
+            </div>
+            <div class="process-step" style="text-align: center; padding: 20px;">
+              <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #5EEAC4, #8B5CF6); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 24px;">3</div>
+              <h4>Проверка и сделка</h4>
+              <p style="font-size: 14px; color: var(--muted);">Юридическая проверка и оформление</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deals">
+      <div class="container">
+        <h2>Выгодные предложения</h2>
+        <p class="reveal">Подбор объектов с прозрачной экономикой: доходность, срок окупаемости, юридическая чистота. Добавляйте презентации и видео — карточки всё проглотят.</p>
+        <div class="grid" id="dealsGrid"></div>
+        <div class="tip">Правьте массив <code>DEALS</code> внизу.</div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <h2>Отзывы</h2>
+        <div class="testi" id="testiGrid">
+          <div class="item reveal">
+            <div class="who">Анна К., ипотечное кредитование</div>
+            <p>"Команда TDA-AGENT помогла получить одобрение ипотеки на выгодных условиях. Профессиональный подход, прозрачность процесса и постоянная поддержка на всех этапах. Рекомендую!"</p>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">⭐⭐⭐⭐⭐ Сумма кредита: 8.5 млн руб.</div>
+          </div>
+          <div class="item reveal">
+            <div class="who">Игорь М., покупка новостройки</div>
+            <p>"Отличная аналитика по застройщикам и объектам. Помогли выбрать квартиру без переплат, провели через все этапы сделки. Сэкономил время и деньги."</p>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">⭐⭐⭐⭐⭐ ЖК 'Северный', 3-комн. квартира</div>
+          </div>
+          <div class="item reveal">
+            <div class="who">Светлана Р., инвестиционные проекты</div>
+            <p>"Профессиональный анализ доходности, четкие расчеты ROI, полное сопровождение инвестиционной сделки. Результат превзошел ожидания — доходность 18% годовых."</p>
+            <div style="font-size:12px;color:var(--muted);margin-top:8px">⭐⭐⭐⭐⭐ Апартаменты, инвестиции 12 млн руб.</div>
+          </div>
+        </div>
+        <div class="cta" style="margin-top:14px">
+          <a class="btn" href="https://t.me/Agent_TDA" target="_blank" rel="noopener">Оставить отзыв в Telegram</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="qr">
+      <div class="container">
+        <h2>QR & Контакты</h2>
+        <div class="qr-grid">
+          <div class="qr-card"><img src="assets/qr/qr-telegram.png" alt="Telegram QR"/><p>Telegram</p></div>
+          <div class="qr-card"><img src="assets/qr/qr-instagram.png" alt="Instagram QR"/><p>Instagram</p></div>
+          <div class="qr-card"><img src="assets/qr/qr-vk.png" alt="VK QR"/><p>VK</p></div>
+          <div class="qr-card"><img src="assets/qr/qr-site.png" alt="Website QR"/><p>Официальный сайт</p></div>
+          <div class="qr-card"><img src="assets/qr/qr-vcard.png" alt="vCard QR"/><p>Сохранить контакт</p></div>
+          <div class="qr-card"><img src="assets/qr/qr-sbp-placeholder.png" alt="Оплата услуг СБП"/><p><strong>СБП</strong>: замените на QR из Т‑Банка</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>О продукте TDA‑AGENT</h2>
+        <div class="card reveal">
+          <p><strong>TDA‑AGENT</strong> — профессиональная экосистема для работы с недвижимостью. Мы объединяем передовые технологии и экспертизу для комплексного решения задач в сфере недвижимости и инвестиций.</p>
+          <div style="margin:16px 0">
+            <h4 style="margin:0 0 8px;color:var(--accent)">Наши преимущества:</h4>
+            <ul style="margin:0;padding-left:20px;color:var(--muted)">
+              <li>Автоматизированная система подбора объектов</li>
+              <li>Прозрачная аналитика и отчетность</li>
+              <li>Юридическое сопровождение сделок</li>
+              <li>Работа с инвестиционными проектами РФ и зарубежья</li>
+            </ul>
+          </div>
+          <div class="cta" style="margin-top:16px">
+            <a class="btn" href="mailto:support@tda-agent.com">📧 Связаться с нами</a>
+            <a class="btn" href="https://t.me/Agent_TDA" target="_blank" rel="noopener">💬 Telegram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; TDA‑AGENT. Без библиотек — чистый HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script>
+    // -------- Config — ваши реальные боты --------
+    const BOTS = [
+      { title: "Заявка на продажу", desc: "Квартира, дом, дача, участок, коммерция.", url: "https://t.me/tda_anketa_pBot" },
+      { title: "Заявка на покупку", desc: "Вторичка, новостройки РФ, дома, участки.", url: "https://t.me/tda_anketa_poBot" },
+      { title: "Инвестиции",        desc: "РФ и зарубеж: апартаменты, котлован, аренда.", url: "https://t.me/tda_anketa_invBot" },
+      { title: "Страхование",       desc: "ОСАГО, ипотека, имущество, грузы, несчастные случаи.", url: "https://t.me/tda_anketa_StrBot" },
+      { title: "Оценка",            desc: "Отчёты, межевание, рыночная стоимость.", url: "https://t.me/tda_anketa_OceBot" },
+      { title: "Для риелторов", desc: "Профессиональные инструменты, лиды, аналитика.", url: "https://t.me/PermRealestateBot?start=realtor" },
+      { title: "Для покупателей", desc: "Поиск недвижимости, консультации, сопровождение.", url: "https://t.me/PermRealestateBot?start=buyer" },
+    ];
+
+    const DEALS = [];
+
+    // -------- Neural Network Canvas --------
+    let c, ctx, W, H, mouseX=0, mouseY=0, nodes=[], edges=[];
+    const CFG = { count: 300, maxDist: 250, parallax: 30, seedEdges: 3, maxEdgesPerNode: 8, spawnRate: 0.02 };
+    
+    function initCanvas() {
+      c = document.getElementById('neuro');
+      if (!c) {
+        console.error('Canvas element #neuro not found');
+        return false;
+      }
+      ctx = c.getContext('2d');
+      if (!ctx) {
+        console.error('Could not get 2D context');
+        return false;
+      }
+      console.log('Canvas element found:', c);
+      return true;
+    }
+
+    function resize(){ 
+      const dpr = window.devicePixelRatio || 1;
+      W = innerWidth;
+      H = Math.max(innerHeight, document.documentElement.scrollHeight);
+      c.width = W * dpr;
+      c.height = H * dpr;
+      c.style.width = W + 'px';
+      c.style.height = H + 'px';
+      ctx.scale(dpr, dpr);
+      console.log('Canvas resized to:', W, 'x', H, 'DPR:', dpr);
+      if (!nodes.length) init(); 
+    }
+    addEventListener('resize', resize);
+    addEventListener('scroll', () => {
+      if (c && c.height < document.documentElement.scrollHeight) {
+        c.height = document.documentElement.scrollHeight;
+        H = c.height;
+      }
+    });
+
+    function rand(a,b){ return Math.random()*(b-a)+a }
+    function dist(a,b){ const dx=a.x-b.x, dy=a.y-b.y; return Math.hypot(dx,dy) }
+    function init(){
+      console.log('Initializing animation with W:', W, 'H:', H);
+      const actualCount = Math.min(CFG.count, Math.floor((W * H) / 6000));
+      console.log('Creating', actualCount, 'nodes');
+      nodes = Array.from({length:actualCount}, ()=> ({ x: rand(0,W), y: rand(0,H), vx: rand(-.15,.15), vy: rand(-.15,.15), r: rand(3,5.5), e: 0, pulse: rand(0, 2*Math.PI) }));
+      edges = [];
+      for (let i=0;i<nodes.length;i++){
+        for (let j=i+1;j<nodes.length && nodes[i].e<CFG.seedEdges;j++){
+          const d = dist(nodes[i], nodes[j]);
+          if (d < CFG.maxDist*0.6){ addEdge(i,j, Math.random()*0.6); }
+        }
+      }
+    }
+    function addEdge(i,j, life=0){
+      if (nodes[i].e>=CFG.maxEdgesPerNode || nodes[j].e>=CFG.maxEdgesPerNode) return;
+      edges.push({i,j, life}); nodes[i].e++; nodes[j].e++;
+    }
+    addEventListener('mousemove', e=>{ mouseX = (e.clientX - W/2)/W; mouseY = (e.clientY - H/2)/H; });
+
+    function step(dt){
+      for (const n of nodes){
+        n.x += n.vx * dt * 0.06; n.y += n.vy * dt * 0.06;
+        if (n.x < -50) n.x = W+50; if (n.x > W+50) n.x = -50;
+        if (n.y < -50) n.y = H+50; if (n.y > H+50) n.y = -50;
+        n.pulse += dt*0.004;
+      }
+      for (let e of edges){ e.life = Math.min(1, e.life + dt*0.0006) }
+      // Создание новых связей
+      for (let k=0; k<60; k++){
+        const i = (Math.random()*nodes.length)|0;
+        const j = (Math.random()*nodes.length)|0;
+        if (i===j) continue;
+        if (nodes[i].e>=CFG.maxEdgesPerNode) continue;
+        if (nodes[j].e>=CFG.maxEdgesPerNode) continue;
+        const d = dist(nodes[i], nodes[j]);
+        if (d < CFG.maxDist && Math.random() < 0.006){ addEdge(i,j, 0); }
+      }
+      
+      // Создание новых частиц
+      if (nodes.length < CFG.count && Math.random() < CFG.spawnRate) {
+        nodes.push({ 
+          x: rand(0,W), 
+          y: rand(0,H), 
+          vx: rand(-.15,.15), 
+          vy: rand(-.15,.15), 
+          r: rand(3,5.5), 
+          e: 0, 
+          pulse: rand(0, 2*Math.PI) 
+        });
+      }
+    }
+
+    function draw(t){
+      if (!ctx || !c) return;
+      
+      const dt = draw.prev ? Math.min(16, t - draw.prev) : 16; draw.prev = t;
+      step(dt);
+      ctx.clearRect(0,0,W,H);
+      
+      // Фоновый градиент
+      const grad = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W,H)/2);
+      grad.addColorStop(0, 'rgba(15, 23, 42, 0.02)');
+      grad.addColorStop(0.5, 'rgba(30, 41, 59, 0.05)');
+      grad.addColorStop(1, 'rgba(15, 23, 42, 0.08)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+      
+      // Рисуем связи
+      for (const e of edges) {
+        const n1 = nodes[e.i], n2 = nodes[e.j];
+        if (!n1 || !n2) continue;
+        const d = dist(n1, n2);
+        if (d > CFG.maxDist) continue;
+        
+        const alpha = (1 - d/CFG.maxDist) * e.life * 0.4;
+        const mx = mouseX * CFG.parallax, my = mouseY * CFG.parallax;
+        
+        ctx.strokeStyle = `rgba(94, 234, 212, ${alpha})`;
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(n1.x + mx, n1.y + my);
+        ctx.lineTo(n2.x + mx, n2.y + my);
+        ctx.stroke();
+      }
+      
+      // Рисуем узлы
+      for (const n of nodes) {
+        const mx = mouseX * CFG.parallax, my = mouseY * CFG.parallax;
+        const pulseSize = n.r + Math.sin(n.pulse) * 0.5;
+        const alpha = 0.6 + Math.sin(n.pulse) * 0.3;
+        
+        ctx.fillStyle = `rgba(139, 92, 246, ${alpha})`;
+        ctx.beginPath();
+        ctx.arc(n.x + mx, n.y + my, pulseSize, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Внутреннее свечение
+        ctx.fillStyle = `rgba(94, 234, 212, ${alpha * 0.8})`;
+        ctx.beginPath();
+        ctx.arc(n.x + mx, n.y + my, pulseSize * 0.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      
+      requestAnimationFrame(draw);
+    }
+
+    function renderServices(){
+      const grid = document.getElementById('servicesGrid'); grid.innerHTML = "";
+      BOTS.forEach(b => {
+        const card = document.createElement('div');
+        card.className = 'service-card reveal';
+        card.innerHTML = `<div class="card-content"><h3>${b.title}</h3><p>${b.desc}</p><a class="btn" href="${b.url}" target="_blank" rel="noopener">Перейти в бота</a></div>`;
+        grid.appendChild(card);
+      });
+    }
+    function renderDeals(){
+      const grid = document.getElementById('dealsGrid'); grid.innerHTML = "";
+      DEALS.forEach(d => {
+        const el = document.createElement('div'); el.className = 'card deal reveal';
+        const tags = (d.tags||[]).map(t=>`<span>#${t}</span>`).join(' ');
+        const links = (d.links||[]).map(l=>`<a class="btn" href="${l.href}" target="_blank" rel="noopener">${l.label}</a>`).join(' ');
+        el.innerHTML = `<h3>${d.title}</h3><div class="meta">${tags}</div><p>${d.text||""}</p>${links}`;
+        grid.appendChild(el);
+      });
+    }
+
+    const menu = document.getElementById('menu');
+    const navLinks = menu.querySelectorAll('a');
+    function setActive(id){ navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#'+id)); }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) setActive(e.target.id);
+        e.target.querySelectorAll('.reveal').forEach(r=>r.classList.add('show'));
+      });
+    }, { threshold:.35 });
+    ['services','achievements','realtors','buyers','deals','testimonials','qr','about','hero'].forEach(id=>{ const el = document.getElementById(id); if (el) io.observe(el); });
+
+    // Обработка форм для интеграции с Telegram-ботом
+    function handleFormSubmission(formData, userType) {
+      // Формируем сообщение для отправки в Telegram-бот
+      const message = {
+        type: userType,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || 'Не указан',
+        timestamp: new Date().toISOString(),
+        ...(userType === 'realtor' ? {
+          experience: formData.experience || 'Не указан',
+          comment: formData.comment || 'Нет дополнительной информации'
+        } : {
+          propertyType: formData.propertyType || 'Не указан',
+          budgetFrom: formData.budgetFrom || 'Не указан',
+          budgetTo: formData.budgetTo || 'Не указан',
+          comment: formData.comment || 'Нет дополнительных пожеланий'
+        })
+      };
+      
+      // Сохраняем данные в localStorage для передачи в бот
+      localStorage.setItem('pendingRegistration', JSON.stringify(message));
+      
+      // Открываем Telegram-бот для подтверждения
+      const botUrl = 'https://t.me/PermRealestateBot?start=' + encodeURIComponent(btoa(JSON.stringify({
+        type: userType,
+        phone: formData.phone,
+        name: formData.name
+      })));
+      
+      window.open(botUrl, '_blank');
+      
+      // Показываем уведомление пользователю
+      showNotification('Перейдите в Telegram-бот для подтверждения регистрации', 'success');
+    }
+    
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: ${type === 'success' ? 'linear-gradient(135deg, #5EEAC4, #8B5CF6)' : 'var(--panel)'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        z-index: 1000;
+        max-width: 300px;
+        font-size: 14px;
+        animation: slideIn 0.3s ease;
+      `;
+      notification.textContent = message;
+      
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+      `;
+      document.head.appendChild(style);
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideIn 0.3s ease reverse';
+        setTimeout(() => notification.remove(), 300);
+      }, 5000);
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const titleEl = document.getElementById('title'); 
+      if (titleEl) setTimeout(()=>titleEl.style.opacity=1, 1200);
+      
+      // Инициализация анимации
+      if (initCanvas()) {
+        console.log('Canvas initialized successfully');
+        resize(); 
+        init(); 
+        console.log('Starting animation loop');
+        requestAnimationFrame(draw);
+      } else {
+        console.error('Failed to initialize canvas');
+      }
+      
+      renderServices(); 
+      renderDeals();
+      
+      // Обработчик формы для риелторов
+      const realtorForm = document.getElementById('realtorForm');
+      if (realtorForm) {
+        realtorForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const formData = {
+            name: document.getElementById('realtorName').value,
+            phone: document.getElementById('realtorPhone').value,
+            email: document.getElementById('realtorEmail').value,
+            experience: document.getElementById('realtorExperience').value,
+            comment: document.getElementById('realtorComment').value
+          };
+          
+          if (!formData.name || !formData.phone) {
+            showNotification('Пожалуйста, заполните обязательные поля (ФИО и телефон)', 'error');
+            return;
+          }
+          
+          handleFormSubmission(formData, 'realtor');
+          realtorForm.reset();
+        });
+      }
+      
+      // Обработчик формы для покупателей
+      const buyerForm = document.getElementById('buyerForm');
+      if (buyerForm) {
+        buyerForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const formData = {
+            name: document.getElementById('buyerName').value,
+            phone: document.getElementById('buyerPhone').value,
+            email: document.getElementById('buyerEmail').value,
+            propertyType: document.getElementById('propertyType').value,
+            budgetFrom: document.getElementById('budgetFrom').value,
+            budgetTo: document.getElementById('budgetTo').value,
+            comment: document.getElementById('buyerComment').value
+          };
+          
+          if (!formData.name || !formData.phone) {
+            showNotification('Пожалуйста, заполните обязательные поля (ФИО и телефон)', 'error');
+            return;
+          }
+          
+          handleFormSubmission(formData, 'buyer');
+          buyerForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

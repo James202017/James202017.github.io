@@ -1,0 +1,21 @@
+﻿version: '3.8'
+
+services:
+  bot_p:
+    build: .
+    command: python bots/BOT_P.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 12m
+    mem_reservation: 6m
+    cpus: 0.05
+    networks:
+      - bots-network
+
+networks:
+  bots-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "false"
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+      com.docker.network.driver.mtu: "1500"

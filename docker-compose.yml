@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  bot_p:
+    build: .
+    command: python bots/BOT_P.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 24m
+    mem_reservation: 12m
+    cpus: 0.1
+    networks:
+      - bots-network
+
+  bot_pr:
+    build: .
+    command: python bots/BOT_PR.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 24m
+    mem_reservation: 12m
+    cpus: 0.1
+    depends_on:
+      - bot_p
+    networks:
+      - bots-network
+
+  bot_inv:
+    build: .
+    command: python bots/BOT_Inv.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 24m
+    mem_reservation: 12m
+    cpus: 0.1
+    depends_on:
+      - bot_p
+    networks:
+      - bots-network
+
+  bot_str:
+    build: .
+    command: python bots/BOT_Str.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 24m
+    mem_reservation: 12m
+    cpus: 0.1
+    depends_on:
+      - bot_p
+    networks:
+      - bots-network
+
+  bot_ocenka:
+    build: .
+    command: python bots/BOT_Ocenka.py
+    env_file: .env
+    restart: unless-stopped
+    mem_limit: 24m
+    mem_reservation: 12m
+    cpus: 0.1
+    depends_on:
+      - bot_p
+    networks:
+      - bots-network
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
+    mem_limit: 16m
+    mem_reservation: 8m
+    cpus: 0.05
+    depends_on:
+      - bot_p
+    networks:
+      - bots-network
+
+networks:
+  bots-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.enable_ip_masquerade: "true"
+      com.docker.network.driver.mtu: "1500"
