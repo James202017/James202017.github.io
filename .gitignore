@@ -1,0 +1,99 @@
+# Переменные окружения
+.env
+*.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Исключить основной .env файл с токенами (но оставить .env.example)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Виртуальные окружения
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Операционная система
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.directory
+.Trash-*
+
+# Логи
+*.log
+logs/
+
+# Временные файлы
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Данные
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Резервные копии
+*.bak
+*.backup
+*.old
+
+# Системные файлы Ubuntu/Linux
+*.pid
+.local/
+.config/
+
+# Конфиденциальные данные
+config.py
+secrets.json
+credentials.json
+
+# Загруженные файлы пользователей
+uploads/
+user_photos/
+
+# Кэш
+.cache/
+*.cache
