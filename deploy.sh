@@ -73,7 +73,8 @@ ssh $SERVER "sudo systemctl restart nginx"
 # 6. Устанавливаем SSL сертификат через Certbot
 echo "🔒 Устанавливаем SSL сертификат..."
 ssh $SERVER "sudo apt update && sudo apt install -y certbot python3-certbot-nginx"
-ssh $SERVER "sudo certbot --nginx -d тда.store -d www.тда.store --non-interactive --agree-tos -m admin@тда.store || echo 'SSL может потребовать ручной настройки'"
+ssh $SERVER "sudo certbot --nginx -d тда.store -d www.тда.store --non-interactive --agree-tos -m admin@тда.store"
+ssh $SERVER "echo 'Примечание: Убедитесь, что DNS-серверы (ns1.reg.ru и ns2.reg.ru) корректно настроены и указывают на IP-адрес вашего сервера'"
 
 echo "✅ Деплой завершен!"
 echo "🌐 Проверьте сайт: https://тда.store"
